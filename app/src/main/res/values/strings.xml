@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">iTunes API</string>
+    <string name="search_by_album_name">Search by album name</string>
+</resources>
