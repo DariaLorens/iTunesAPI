@@ -43,5 +43,6 @@ data class Song(
     @Expose @SerializedName("previewUrl") val previewUrl: String,
     @Expose @SerializedName("artworkUrl60") val artworkUrl60: String,
     @Expose @SerializedName("trackNumber") val trackNumber: Int,
-    @Expose @SerializedName("primaryGenreName") val primaryGenreName: String
+    @Expose @SerializedName("primaryGenreName") val primaryGenreName: String,
+    @Expose @SerializedName("trackTimeMillis") val trackTimeMillis: Long
 )

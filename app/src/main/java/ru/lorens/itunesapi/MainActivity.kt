@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
@@ -24,11 +25,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         searchButton.setOnClickListener {
-            getAlbums(
-                searchFrame.text.toString().toLowerCase().replace(" ", "+"), this
-            )
-
-            progressBar.visibility = View.VISIBLE
+            // check string
+            if (searchFrame.text.toString() != "") {
+                getAlbums(
+                    searchFrame.text.toString().toLowerCase().replace(" ", "+"), this
+                )
+                progressBar.visibility = View.VISIBLE
+            } else {
+                Toast.makeText(
+                    this@MainActivity,
+                    "The string must not be empty",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
 
             //hide keyboard
             val view = this.currentFocus
@@ -48,6 +57,11 @@ class MainActivity : AppCompatActivity() {
                 try {
                     RestClient.getClient.getAlbumsByName(request).results
                 } catch (e: Throwable) {
+                    Toast.makeText(
+                        this@MainActivity,
+                        "Sorry, server is not available",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     print(e)
                     null
                 }
@@ -73,6 +87,12 @@ class MainActivity : AppCompatActivity() {
 
                     progressBar.visibility = View.INVISIBLE
                 }
+            } else {
+                Toast.makeText(
+                    this@MainActivity,
+                    "Nothing found",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
