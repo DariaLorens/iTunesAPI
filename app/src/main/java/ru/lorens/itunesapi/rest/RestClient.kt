@@ -3,10 +3,10 @@ package ru.lorens.itunesapi.rest
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.*
+import retrofit2.http.GET
+import retrofit2.http.Query
 import ru.lorens.itunesapi.BASE_URL
 
 object RestClient {

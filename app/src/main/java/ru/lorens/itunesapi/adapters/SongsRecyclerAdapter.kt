@@ -69,11 +69,11 @@ class SongsRecyclerAdapter(var album: Album, var items: List<Song>) :
         val albumPreview: ImageView = itemView.findViewById(R.id.albumPreview)
         val albumName: TextView = itemView.findViewById(R.id.albumName)
         val artistName: TextView = itemView.findViewById(R.id.artistName)
-        val prise: TextView  = itemView.findViewById(R.id.prise)
-        val trackCount: TextView  = itemView.findViewById(R.id.trackCount)
-        val copyright:TextView = itemView.findViewById(R.id.copyright)
-        val country:TextView = itemView.findViewById(R.id.country)
-        val primaryGenreName:TextView = itemView.findViewById(R.id.primaryGenreName)
+        val prise: TextView = itemView.findViewById(R.id.prise)
+        val trackCount: TextView = itemView.findViewById(R.id.trackCount)
+        val copyright: TextView = itemView.findViewById(R.id.copyright)
+        val country: TextView = itemView.findViewById(R.id.country)
+        val primaryGenreName: TextView = itemView.findViewById(R.id.primaryGenreName)
     }
 
     inner class SongsHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
